@@ -7,7 +7,9 @@ import { CoreModule } from './core/core.module';
 @Module({
   imports: [
     CoreModule,
-    ConfigModule.forRoot(),
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
     AuthModule,
     UserModule,
   ],
