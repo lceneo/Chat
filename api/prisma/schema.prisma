@@ -10,5 +10,16 @@ datasource db {
 
 model User {
   id   String @id @default(uuid())
-  interlocutor_id String @default(uuid())
+  interlocutorId String @default(uuid()) @unique()
+  sentMessages Message[] @relation("WrittenMessages")
+  receivedMessages Message[] @relation("ReceivedMessages")
+}
+
+model Message {
+  id   String @id @default(uuid())
+  sender   User  @relation("WrittenMessages", fields: [senderId], references: [interlocutorId])
+  senderId String
+  receiver   User  @relation("ReceivedMessages", fields: [receiverId], references: [interlocutorId])
+  receiverId String @default(uuid())
+  text String
 }

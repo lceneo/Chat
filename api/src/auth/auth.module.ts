@@ -16,6 +16,7 @@ import { AuthenticationGuard } from './guards/authentication.guard';
         secret: configService.get('SECRET'),
       }),
       inject: [ConfigService],
+      global: true
     }),
     UserModule,
   ],
