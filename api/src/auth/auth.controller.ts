@@ -22,4 +22,9 @@ export class AuthController {
     const token = await this.authService.signIn(signInDTO);
     res.cookie('Access-Token', token, { httpOnly: true, sameSite: 'strict' });
   }
+
+  @Post('sign-out')
+  signOut(@Res({ passthrough: true }) res: Response) {
+    res.clearCookie('Access-Token');
+  }
 }

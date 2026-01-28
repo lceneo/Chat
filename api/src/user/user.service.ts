@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../core/db/prisma.service';
-import { MessageCreateNestedManyWithoutSenderInput } from '../generated/prisma/models/Message';
 
 @Injectable()
 export class UserService {
@@ -16,6 +15,14 @@ export class UserService {
     return this.prismaService.user.findUnique({
       where: {
         id: userId,
+      },
+    });
+  }
+
+  async findOneByLoginId(loginId: string) {
+    return this.prismaService.user.findUnique({
+      where: {
+        loginId: loginId,
       },
     });
   }

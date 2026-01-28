@@ -52,6 +52,7 @@ export const AnyNull = runtime.AnyNull
 
 export const ModelName = {
   User: 'User',
+  Chat: 'Chat',
   Message: 'Message'
 } as const
 
@@ -73,14 +74,22 @@ export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof
 
 export const UserScalarFieldEnum = {
   id: 'id',
-  interlocutorId: 'interlocutorId'
+  loginId: 'loginId'
 } as const
 
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
 
 
+export const ChatScalarFieldEnum = {
+  id: 'id'
+} as const
+
+export type ChatScalarFieldEnum = (typeof ChatScalarFieldEnum)[keyof typeof ChatScalarFieldEnum]
+
+
 export const MessageScalarFieldEnum = {
   id: 'id',
+  chatId: 'chatId',
   senderId: 'senderId',
   receiverId: 'receiverId',
   text: 'text'

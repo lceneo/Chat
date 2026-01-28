@@ -10,16 +10,25 @@ datasource db {
 
 model User {
   id   String @id @default(uuid())
-  interlocutorId String @default(uuid()) @unique()
+  loginId String @default(uuid()) @unique()
+  chats Chat[]
   sentMessages Message[] @relation("WrittenMessages")
   receivedMessages Message[] @relation("ReceivedMessages")
 }
 
+model Chat {
+  id String @id @default(uuid())
+  interlocutors User[]
+  messages Message[]
+}
+
 model Message {
   id   String @id @default(uuid())
-  sender   User  @relation("WrittenMessages", fields: [senderId], references: [interlocutorId])
+  chat Chat @relation(fields: [chatId], references: [id])
+  chatId String
+  sender   User  @relation("WrittenMessages", fields: [senderId], references: [id])
   senderId String
-  receiver   User  @relation("ReceivedMessages", fields: [receiverId], references: [interlocutorId])
+  receiver   User  @relation("ReceivedMessages", fields: [receiverId], references: [id])
   receiverId String @default(uuid())
   text String
 }

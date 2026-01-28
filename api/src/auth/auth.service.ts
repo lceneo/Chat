@@ -18,16 +18,23 @@ export class AuthService {
   ) {}
 
   async signUp() {
-    return await this.userService.create();
+    const user = await this.userService.create();
+    await this.signIn({ loginId: user.id });
+    return user;
   }
 
   async signIn(signInDTO: SignInDto) {
-    const user = await this.userService.findOne(signInDTO.userId);
+    const { loginId } = signInDTO;
+    const user = await this.userService.findOneByLoginId(loginId);
     if (!user) {
       throw new NotFoundException('No such user');
     }
-    const payload = { sub: user.id };
+    const payload = { sub: loginId };
     return await this.jwtService.signAsync(payload);
+  }
+
+  async signOut() {
+
   }
 
   async getUsers() {
