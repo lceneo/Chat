@@ -1,0 +1,40 @@
+<div class="auth-container">
+  <mat-card class="auth-card">
+    <mat-card-header>
+      <mat-card-title>Authentication</mat-card-title>
+      <mat-card-subtitle>Enter your user GUID to access the messenger</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="authForm" (ngSubmit)="onSubmit()" class="auth-form">
+        <mat-form-field appearance="fill" class="full-width-input">
+          <mat-label>User GUID</mat-label>
+          <input 
+            matInput 
+            placeholder="Enter your GUID" 
+            formControlName="userGuid"
+            type="text"
+            autocomplete="off"
+          >
+          @if (authForm.get('userGuid')?.invalid && authForm.get('userGuid')?.touched) {
+            @if (authForm.get('userGuid')?.hasError('required')) {
+              <mat-error>User GUID is required</mat-error>
+            } @else if (authForm.get('userGuid')?.hasError('pattern')) {
+              <mat-error>Please enter a valid GUID format</mat-error>
+            }
+          }
+        </mat-form-field>
+
+        <div class="submit-button-container">
+          <button 
+            mat-raised-button 
+            color="primary" 
+            type="submit"
+            [disabled]="authForm.invalid"
+            class="submit-button">
+            Authenticate
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

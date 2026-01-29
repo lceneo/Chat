@@ -1,12 +1,11 @@
 import {
   Injectable,
-  NotFoundException,
-  UnauthorizedException,
+  NotFoundException
 } from '@nestjs/common';
-import { PrismaService } from '../core/db/prisma.service';
 import { SignInDto } from './dto/requests/sign-in.dto';
-import { UserService } from '../user/user.service';
 import { JwtService } from '@nestjs/jwt';
+import { UserService } from '../user/user.service';
+import { PrismaService } from '../../core/db/prisma.service';
 
 @Injectable()
 export class AuthService {
@@ -14,13 +13,11 @@ export class AuthService {
   constructor(
     private readonly userService: UserService,
     private readonly jwtService: JwtService,
-    private readonly prismaService: PrismaService
+    private readonly prismaService: PrismaService,
   ) {}
 
   async signUp() {
-    const user = await this.userService.create();
-    await this.signIn({ loginId: user.id });
-    return user;
+    return await this.userService.create();
   }
 
   async signIn(signInDTO: SignInDto) {

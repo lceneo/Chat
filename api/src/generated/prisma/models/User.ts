@@ -26,34 +26,34 @@ export type AggregateUser = {
 
 export type UserMinAggregateOutputType = {
   id: string | null
-  loginId: string | null
+  hashedLoginId: string | null
 }
 
 export type UserMaxAggregateOutputType = {
   id: string | null
-  loginId: string | null
+  hashedLoginId: string | null
 }
 
 export type UserCountAggregateOutputType = {
   id: number
-  loginId: number
+  hashedLoginId: number
   _all: number
 }
 
 
 export type UserMinAggregateInputType = {
   id?: true
-  loginId?: true
+  hashedLoginId?: true
 }
 
 export type UserMaxAggregateInputType = {
   id?: true
-  loginId?: true
+  hashedLoginId?: true
 }
 
 export type UserCountAggregateInputType = {
   id?: true
-  loginId?: true
+  hashedLoginId?: true
   _all?: true
 }
 
@@ -131,7 +131,7 @@ export type UserGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArg
 
 export type UserGroupByOutputType = {
   id: string
-  loginId: string
+  hashedLoginId: string
   _count: UserCountAggregateOutputType | null
   _min: UserMinAggregateOutputType | null
   _max: UserMaxAggregateOutputType | null
@@ -157,7 +157,7 @@ export type UserWhereInput = {
   OR?: Prisma.UserWhereInput[]
   NOT?: Prisma.UserWhereInput | Prisma.UserWhereInput[]
   id?: Prisma.StringFilter<"User"> | string
-  loginId?: Prisma.StringFilter<"User"> | string
+  hashedLoginId?: Prisma.StringFilter<"User"> | string
   chats?: Prisma.ChatListRelationFilter
   sentMessages?: Prisma.MessageListRelationFilter
   receivedMessages?: Prisma.MessageListRelationFilter
@@ -165,7 +165,7 @@ export type UserWhereInput = {
 
 export type UserOrderByWithRelationInput = {
   id?: Prisma.SortOrder
-  loginId?: Prisma.SortOrder
+  hashedLoginId?: Prisma.SortOrder
   chats?: Prisma.ChatOrderByRelationAggregateInput
   sentMessages?: Prisma.MessageOrderByRelationAggregateInput
   receivedMessages?: Prisma.MessageOrderByRelationAggregateInput
@@ -173,18 +173,18 @@ export type UserOrderByWithRelationInput = {
 
 export type UserWhereUniqueInput = Prisma.AtLeast<{
   id?: string
-  loginId?: string
+  hashedLoginId?: string
   AND?: Prisma.UserWhereInput | Prisma.UserWhereInput[]
   OR?: Prisma.UserWhereInput[]
   NOT?: Prisma.UserWhereInput | Prisma.UserWhereInput[]
   chats?: Prisma.ChatListRelationFilter
   sentMessages?: Prisma.MessageListRelationFilter
   receivedMessages?: Prisma.MessageListRelationFilter
-}, "id" | "loginId">
+}, "id" | "hashedLoginId">
 
 export type UserOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
-  loginId?: Prisma.SortOrder
+  hashedLoginId?: Prisma.SortOrder
   _count?: Prisma.UserCountOrderByAggregateInput
   _max?: Prisma.UserMaxOrderByAggregateInput
   _min?: Prisma.UserMinOrderByAggregateInput
@@ -195,12 +195,12 @@ export type UserScalarWhereWithAggregatesInput = {
   OR?: Prisma.UserScalarWhereWithAggregatesInput[]
   NOT?: Prisma.UserScalarWhereWithAggregatesInput | Prisma.UserScalarWhereWithAggregatesInput[]
   id?: Prisma.StringWithAggregatesFilter<"User"> | string
-  loginId?: Prisma.StringWithAggregatesFilter<"User"> | string
+  hashedLoginId?: Prisma.StringWithAggregatesFilter<"User"> | string
 }
 
 export type UserCreateInput = {
   id?: string
-  loginId?: string
+  hashedLoginId?: string
   chats?: Prisma.ChatCreateNestedManyWithoutInterlocutorsInput
   sentMessages?: Prisma.MessageCreateNestedManyWithoutSenderInput
   receivedMessages?: Prisma.MessageCreateNestedManyWithoutReceiverInput
@@ -208,7 +208,7 @@ export type UserCreateInput = {
 
 export type UserUncheckedCreateInput = {
   id?: string
-  loginId?: string
+  hashedLoginId?: string
   chats?: Prisma.ChatUncheckedCreateNestedManyWithoutInterlocutorsInput
   sentMessages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
   receivedMessages?: Prisma.MessageUncheckedCreateNestedManyWithoutReceiverInput
@@ -216,7 +216,7 @@ export type UserUncheckedCreateInput = {
 
 export type UserUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  loginId?: Prisma.StringFieldUpdateOperationsInput | string
+  hashedLoginId?: Prisma.StringFieldUpdateOperationsInput | string
   chats?: Prisma.ChatUpdateManyWithoutInterlocutorsNestedInput
   sentMessages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
   receivedMessages?: Prisma.MessageUpdateManyWithoutReceiverNestedInput
@@ -224,7 +224,7 @@ export type UserUpdateInput = {
 
 export type UserUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  loginId?: Prisma.StringFieldUpdateOperationsInput | string
+  hashedLoginId?: Prisma.StringFieldUpdateOperationsInput | string
   chats?: Prisma.ChatUncheckedUpdateManyWithoutInterlocutorsNestedInput
   sentMessages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
   receivedMessages?: Prisma.MessageUncheckedUpdateManyWithoutReceiverNestedInput
@@ -232,32 +232,32 @@ export type UserUncheckedUpdateInput = {
 
 export type UserCreateManyInput = {
   id?: string
-  loginId?: string
+  hashedLoginId?: string
 }
 
 export type UserUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  loginId?: Prisma.StringFieldUpdateOperationsInput | string
+  hashedLoginId?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type UserUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  loginId?: Prisma.StringFieldUpdateOperationsInput | string
+  hashedLoginId?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type UserCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  loginId?: Prisma.SortOrder
+  hashedLoginId?: Prisma.SortOrder
 }
 
 export type UserMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  loginId?: Prisma.SortOrder
+  hashedLoginId?: Prisma.SortOrder
 }
 
 export type UserMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  loginId?: Prisma.SortOrder
+  hashedLoginId?: Prisma.SortOrder
 }
 
 export type UserListRelationFilter = {
@@ -347,14 +347,14 @@ export type UserUpdateOneRequiredWithoutReceivedMessagesNestedInput = {
 
 export type UserCreateWithoutChatsInput = {
   id?: string
-  loginId?: string
+  hashedLoginId?: string
   sentMessages?: Prisma.MessageCreateNestedManyWithoutSenderInput
   receivedMessages?: Prisma.MessageCreateNestedManyWithoutReceiverInput
 }
 
 export type UserUncheckedCreateWithoutChatsInput = {
   id?: string
-  loginId?: string
+  hashedLoginId?: string
   sentMessages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
   receivedMessages?: Prisma.MessageUncheckedCreateNestedManyWithoutReceiverInput
 }
@@ -385,19 +385,19 @@ export type UserScalarWhereInput = {
   OR?: Prisma.UserScalarWhereInput[]
   NOT?: Prisma.UserScalarWhereInput | Prisma.UserScalarWhereInput[]
   id?: Prisma.StringFilter<"User"> | string
-  loginId?: Prisma.StringFilter<"User"> | string
+  hashedLoginId?: Prisma.StringFilter<"User"> | string
 }
 
 export type UserCreateWithoutSentMessagesInput = {
   id?: string
-  loginId?: string
+  hashedLoginId?: string
   chats?: Prisma.ChatCreateNestedManyWithoutInterlocutorsInput
   receivedMessages?: Prisma.MessageCreateNestedManyWithoutReceiverInput
 }
 
 export type UserUncheckedCreateWithoutSentMessagesInput = {
   id?: string
-  loginId?: string
+  hashedLoginId?: string
   chats?: Prisma.ChatUncheckedCreateNestedManyWithoutInterlocutorsInput
   receivedMessages?: Prisma.MessageUncheckedCreateNestedManyWithoutReceiverInput
 }
@@ -409,14 +409,14 @@ export type UserCreateOrConnectWithoutSentMessagesInput = {
 
 export type UserCreateWithoutReceivedMessagesInput = {
   id?: string
-  loginId?: string
+  hashedLoginId?: string
   chats?: Prisma.ChatCreateNestedManyWithoutInterlocutorsInput
   sentMessages?: Prisma.MessageCreateNestedManyWithoutSenderInput
 }
 
 export type UserUncheckedCreateWithoutReceivedMessagesInput = {
   id?: string
-  loginId?: string
+  hashedLoginId?: string
   chats?: Prisma.ChatUncheckedCreateNestedManyWithoutInterlocutorsInput
   sentMessages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
 }
@@ -439,14 +439,14 @@ export type UserUpdateToOneWithWhereWithoutSentMessagesInput = {
 
 export type UserUpdateWithoutSentMessagesInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  loginId?: Prisma.StringFieldUpdateOperationsInput | string
+  hashedLoginId?: Prisma.StringFieldUpdateOperationsInput | string
   chats?: Prisma.ChatUpdateManyWithoutInterlocutorsNestedInput
   receivedMessages?: Prisma.MessageUpdateManyWithoutReceiverNestedInput
 }
 
 export type UserUncheckedUpdateWithoutSentMessagesInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  loginId?: Prisma.StringFieldUpdateOperationsInput | string
+  hashedLoginId?: Prisma.StringFieldUpdateOperationsInput | string
   chats?: Prisma.ChatUncheckedUpdateManyWithoutInterlocutorsNestedInput
   receivedMessages?: Prisma.MessageUncheckedUpdateManyWithoutReceiverNestedInput
 }
@@ -464,35 +464,35 @@ export type UserUpdateToOneWithWhereWithoutReceivedMessagesInput = {
 
 export type UserUpdateWithoutReceivedMessagesInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  loginId?: Prisma.StringFieldUpdateOperationsInput | string
+  hashedLoginId?: Prisma.StringFieldUpdateOperationsInput | string
   chats?: Prisma.ChatUpdateManyWithoutInterlocutorsNestedInput
   sentMessages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
 }
 
 export type UserUncheckedUpdateWithoutReceivedMessagesInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  loginId?: Prisma.StringFieldUpdateOperationsInput | string
+  hashedLoginId?: Prisma.StringFieldUpdateOperationsInput | string
   chats?: Prisma.ChatUncheckedUpdateManyWithoutInterlocutorsNestedInput
   sentMessages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
 }
 
 export type UserUpdateWithoutChatsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  loginId?: Prisma.StringFieldUpdateOperationsInput | string
+  hashedLoginId?: Prisma.StringFieldUpdateOperationsInput | string
   sentMessages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
   receivedMessages?: Prisma.MessageUpdateManyWithoutReceiverNestedInput
 }
 
 export type UserUncheckedUpdateWithoutChatsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  loginId?: Prisma.StringFieldUpdateOperationsInput | string
+  hashedLoginId?: Prisma.StringFieldUpdateOperationsInput | string
   sentMessages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
   receivedMessages?: Prisma.MessageUncheckedUpdateManyWithoutReceiverNestedInput
 }
 
 export type UserUncheckedUpdateManyWithoutChatsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  loginId?: Prisma.StringFieldUpdateOperationsInput | string
+  hashedLoginId?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 
@@ -546,7 +546,7 @@ export type UserCountOutputTypeCountReceivedMessagesArgs<ExtArgs extends runtime
 
 export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  loginId?: boolean
+  hashedLoginId?: boolean
   chats?: boolean | Prisma.User$chatsArgs<ExtArgs>
   sentMessages?: boolean | Prisma.User$sentMessagesArgs<ExtArgs>
   receivedMessages?: boolean | Prisma.User$receivedMessagesArgs<ExtArgs>
@@ -555,20 +555,20 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
 
 export type UserSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  loginId?: boolean
+  hashedLoginId?: boolean
 }, ExtArgs["result"]["user"]>
 
 export type UserSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  loginId?: boolean
+  hashedLoginId?: boolean
 }, ExtArgs["result"]["user"]>
 
 export type UserSelectScalar = {
   id?: boolean
-  loginId?: boolean
+  hashedLoginId?: boolean
 }
 
-export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "loginId", ExtArgs["result"]["user"]>
+export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "hashedLoginId", ExtArgs["result"]["user"]>
 export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   chats?: boolean | Prisma.User$chatsArgs<ExtArgs>
   sentMessages?: boolean | Prisma.User$sentMessagesArgs<ExtArgs>
@@ -587,7 +587,7 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
-    loginId: string
+    hashedLoginId: string
   }, ExtArgs["result"]["user"]>
   composites: {}
 }
@@ -1015,7 +1015,7 @@ export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Typ
  */
 export interface UserFieldRefs {
   readonly id: Prisma.FieldRef<"User", 'String'>
-  readonly loginId: Prisma.FieldRef<"User", 'String'>
+  readonly hashedLoginId: Prisma.FieldRef<"User", 'String'>
 }
     
 

@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { PrismaService } from '../core/db/prisma.service';
-import { Message } from '../generated/prisma/client';
+import { PrismaService } from '../../core/db/prisma.service';
 
 @Injectable()
 export class ChatService {
@@ -9,6 +8,6 @@ export class ChatService {
 
 
   async getMessages() {
-    return await this.prismaService.message.findMany();
+    return await this.prismaService.chat.findMany();
   }
 }

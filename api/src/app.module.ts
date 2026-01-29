@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
-import { AuthModule } from './auth/auth.module';
 import { ConfigModule } from '@nestjs/config';
-import { UserModule } from './user/user.module';
+import { UserModule } from './features/user/user.module';
 import { CoreModule } from './core/core.module';
-import { ChatModule } from './chat/chat.module';
+import { ChatModule } from './features/chat/chat.module';
+import { AuthModule } from './features/auth/auth.module';
 
 @Module({
   imports: [
